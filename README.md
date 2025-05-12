@@ -109,47 +109,31 @@ Follow these steps to integrate and run the improved Beyond MaPLe version:
 
 ### 🔧 Steps:
 
-1. **Clone the official MaPLe repository:**
+1. **Set up the environment:**
     
-    ```bash
-    git clone https://github.com/muzairkhattak/maple.git
-    cd maple
-    ```
+    Follow the installation guide in the original `INSTALL.md` file.
 
-2. **Set up the environment:**
-    
-    Follow the installation guide in the original `INSTALL.md` file:
-    
-    ```bash
-    pip install -r requirements.txt
-    ```
-
-3. **Prepare the datasets:**
+2. **Prepare the datasets:**
     
     Refer to the `DATASETS.md` file in the MaPLe repository to download and organize all supported datasets correctly.
 
-4. **Replace the trainer file with our enhanced version:**
+3. **Replace the trainer file with our enhanced version:**
     
-    Copy the `maple.py` file from this repository and overwrite the original one inside the MaPLe repo's `trainers/` folder:
-    
-    ```bash
-    cp path/to/this_repo/maple.py path/to/maple/trainers/maple.py
-    ```
+    Copy the `maple.py` file from this repository and overwrite the original one inside the MaPLe repo's `trainers/` folder. 
 
-5. **Train and evaluate the model:**
-    
-    Use any of the provided configuration files in the original repo or create your own. Example:
-    
-    ```bash
-    python train.py --config-file configs/oxford_pets/maple.yaml
-    ```
+4. **Train and evaluate the model:**
 
-    You can find more details on training and evaluation in the official `RUN.md`.
+   Find more details on training and evaluation in the official `RUN.md`.
 
 ## Acknowledgments
-- **Open-Source Communities:** Thanks to the contributors of PyTorch, Hugging Face, and other libraries for their amazing work.
-- **Individuals:** Special thanks to bla, bla, bla for the amazing team effort, invaluable guidance and support throughout this project.
-- **Resource Providers:** Gratitude to ABC-organization for providing the computational resources necessary for this project.
+- **Open-Source Contributors:**  
+  This project builds upon the original MaPLe framework.  
+  We thank the authors for releasing high-quality, reproducible code that made this work possible.
+- **Research Advisors:**  
+  We are grateful to the ICS590 course instructor and the faculty at King Fahd University of Petroleum and Minerals (KFUPM) for their ongoing support and guidance.
+- **Google Colab Pro:**  
+  Experiments were conducted using Colab Pro with an NVIDIA T4 GPU, which provided a practical and accessible platform for training and evaluation.
+
 
 
 
