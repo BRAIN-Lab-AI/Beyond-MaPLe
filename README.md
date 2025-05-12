@@ -22,7 +22,7 @@ This project was completed as part of the ICS590 Deep Learning course at KFUPM.
 - **Affiliations:** KFUPM
 
 ### Project Documents
-- **Report:** [Project Report](/BeyondMaPLe.pdf)
+- **Report:** [BeyondMaPLe.pdf](https://github.com/BRAIN-Lab-AI/Beyond-MaPLe/blob/main/Beyond%20MaPLe.pdf)
 
 ### Reference Paper
 - [MaPLe: Multi-modal Prompt Learning](https://arxiv.org/pdf/2210.03117)
@@ -35,16 +35,16 @@ This project was completed as part of the ICS590 Deep Learning course at KFUPM.
 ## Project Technicalities
 
 ### Terminologies
-- **Diffusion Model:** A generative model that progressively transforms random noise into coherent data.
-- **Latent Space:** A compressed, abstract representation of data where complex features are captured.
-- **UNet Architecture:** A neural network with an encoder-decoder structure featuring skip connections for better feature preservation.
-- **Text Encoder:** A model that converts text into numerical embeddings for downstream tasks.
-- **Perceptual Loss:** A loss function that measures high-level differences between images, emphasizing perceptual similarity.
-- **Tokenization:** The process of breaking down text into smaller units (tokens) for processing.
-- **Noise Vector:** A randomly generated vector used to initialize the diffusion process in generative models.
-- **Decoder:** A network component that transforms latent representations back into image space.
-- **Iterative Refinement:** The process of gradually improving the quality of generated data through multiple steps.
-- **Conditional Generation:** The process where outputs are generated based on auxiliary inputs, such as textual descriptions.
+- **Vision-Language Model (VLM):** A deep learning model that jointly understands images and text by aligning them in a shared feature space.
+- **CLIP (Contrastive Language–Image Pretraining):** A foundation model trained on image-text pairs using contrastive loss, enabling zero-shot classification.
+- **Prompt Learning:** A technique where learnable tokens are prepended to inputs (text or image) to guide model behavior without updating the entire backbone.
+- **Multimodal Prompting:** Applying prompt learning in both the text and image branches of a vision-language model (e.g., MaPLe).
+- **Shallow vs. Deep Prompts:** Shallow prompts are applied to the input layer; deep prompts are inserted at intermediate transformer layers to influence multi-level representations.
+- **Prompt Dropout:** A regularization technique that applies dropout to learned prompt embeddings during training, helping prevent overfitting.
+- **Prompt Initialization:** The strategy used to initialize prompt tokens (random, repeated, or semantically derived).
+- **Selective Injection:** Injecting prompts at chosen layers (e.g., layers 1, 6, 11) of the transformer to control the depth of influence and efficiency.
+- **Base-to-Novel Generalization:** The model's ability to transfer knowledge from seen (base) classes to unseen (novel) classes during testing.
+- **Zero-Shot / Few-Shot Learning:** Evaluation settings where the model has never (or barely) seen examples from the target classes.
 
 ### Problem Statements
 - **Problem 1:** Achieving high-resolution and detailed images using conventional diffusion models remains challenging.
