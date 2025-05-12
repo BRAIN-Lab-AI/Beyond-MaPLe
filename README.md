@@ -62,17 +62,24 @@ This project was completed as part of the ICS590 Deep Learning course at KFUPM.
 3. **Selective Prompt Injection:** Instead of prompting all layers, only inject prompts at layers 1, 6, and 11 — balancing representational depth and efficiency.
 
 ### Proposed Solution: Code-Based Implementation
-This repository provides an implementation of the enhanced stable diffusion model using PyTorch. The solution includes:
 
-- **Modified UNet Architecture:** Incorporates residual connections and efficient convolutional blocks.
-- **Novel Loss Functions:** Combines Mean Squared Error (MSE) with perceptual loss to enhance feature learning.
-- **Optimized Training Loop:** Reduces computational overhead while maintaining performance.
+This repository builds upon the official MaPLe framework for multimodal prompt learning. Our implementation focuses on lightweight, modular enhancements to prompt injection, initialization, and regularization.
 
-### Key Components
-- **`model.py`**: Contains the modified UNet architecture and other model components.
-- **`train.py`**: Script to handle the training process with configurable parameters.
-- **`utils.py`**: Utility functions for data processing, augmentation, and metric evaluations.
-- **`inference.py`**: Script for generating images using the trained model.
+The core solution includes:
+- **Prompt Dropout:** Introduced during training to reduce overfitting on base classes and encourage better generalization.
+- **Smarter Prompt Initialization:** Prompt tokens are initialized using the average CLIP embedding of class names, ensuring better semantic grounding.
+- **Selective Prompt Injection:** Prompt tokens are injected only at selected transformer layers (1, 6, 11) to optimize representational depth and computational efficiency.
+
+### 🔧 Key Components
+
+- **`maple.py`**: A self-contained file that implements the proposed enhancements to the MaPLe framework. This script modifies prompt dropout, initialization, and layer injection logic.
+
+The rest of the implementation relies on the [official MaPLe GitHub repository](https://github.com/muzairkhattak/maple), which provides the full backbone, dataset utilities, and training pipeline.
+
+Refer to the following files in the original MaPLe repo for complete usage:
+- 📄 **`INSTALL.md`** – Setup instructions and dependencies.  
+- 📄 **`DATASETS.md`** – Dataset preparation and folder structure.  
+- 📄 **`RUN.md`** – How to train and evaluate the model using provided configs.
 
 ## Model Workflow
 The workflow of the Enhanced Stable Diffusion model is designed to translate textual descriptions into high-quality artistic images through a multi-step diffusion process:
