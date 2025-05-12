@@ -103,31 +103,48 @@ The Beyond MaPLe framework builds upon the original MaPLe architecture to improv
 
 ## How to Run the Code
 
-1. **Clone the Repository:**
+This project builds on top of the official [MaPLe repository](https://github.com/muzairkhattak/multimodal-prompt-learning.git), with enhancements implemented in a modified version of the `maple.py` file.
+
+Follow these steps to integrate and run the improved Beyond MaPLe version:
+
+### 🔧 Steps:
+
+1. **Clone the official MaPLe repository:**
+    
     ```bash
-    git clone https://github.com/yourusername/enhanced-stable-diffusion.git
-    cd enhanced-stable-diffusion
+    git clone https://github.com/muzairkhattak/maple.git
+    cd maple
     ```
 
-2. **Set Up the Environment:**
-    Create a virtual environment and install the required dependencies.
+2. **Set up the environment:**
+    
+    Follow the installation guide in the original `INSTALL.md` file:
+    
     ```bash
-    python3 -m venv venv
-    source venv/bin/activate  # On Windows use: venv\Scripts\activate
     pip install -r requirements.txt
     ```
 
-3. **Train the Model:**
-    Configure the training parameters in the provided configuration file and run:
+3. **Prepare the datasets:**
+    
+    Refer to the `DATASETS.md` file in the MaPLe repository to download and organize all supported datasets correctly.
+
+4. **Replace the trainer file with our enhanced version:**
+    
+    Copy the `maple.py` file from this repository and overwrite the original one inside the MaPLe repo's `trainers/` folder:
+    
     ```bash
-    python train.py --config configs/train_config.yaml
+    cp path/to/this_repo/maple.py path/to/maple/trainers/maple.py
     ```
 
-4. **Generate Images:**
-    Once training is complete, use the inference script to generate images.
+5. **Train and evaluate the model:**
+    
+    Use any of the provided configuration files in the original repo or create your own. Example:
+    
     ```bash
-    python inference.py --checkpoint path/to/checkpoint.pt --input "A surreal landscape with mountains and rivers"
+    python train.py --config-file configs/oxford_pets/maple.yaml
     ```
+
+    You can find more details on training and evaluation in the official `RUN.md`.
 
 ## Acknowledgments
 - **Open-Source Communities:** Thanks to the contributors of PyTorch, Hugging Face, and other libraries for their amazing work.
