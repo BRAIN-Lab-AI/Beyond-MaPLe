@@ -47,19 +47,19 @@ This project was completed as part of the ICS590 Deep Learning course at KFUPM.
 - **Zero-Shot / Few-Shot Learning:** Evaluation settings where the model has never (or barely) seen examples from the target classes.
 
 ### Problem Statements
-- **Problem 1:** Achieving high-resolution and detailed images using conventional diffusion models remains challenging.
-- **Problem 2:** Existing models suffer from slow inference times during the image generation process.
-- **Problem 3:** There is limited capability in performing style transfer and generating diverse artistic variations.
+- **Problem 1:** Prompt-based vision-language models like CLIP rely on static, hand-crafted prompts, which limit performance in domain-specific or novel class settings.
+- **Problem 2:** Even with learnable prompts (as in CoOp or MaPLe), generalization to unseen classes often lags behind performance on base classes.
+- **Problem 3:** Uniform injection of prompt tokens across all transformer layers introduces unnecessary complexity and redundancy without guaranteed gains.
 
 ### Loopholes or Research Areas
-- **Evaluation Metrics:** Lack of robust metrics to effectively assess the quality of generated images.
-- **Output Consistency:** Inconsistencies in output quality when scaling the model to higher resolutions.
-- **Computational Resources:** Training requires significant GPU compute resources, which may not be readily accessible.
+- **Prompt Generalization:** How can we better transfer prompt knowledge from base to novel classes without overfitting?
+- **Semantic Anchoring:** Can we initialize prompts in a more meaningful way to align with actual class semantics?
+- **Injection Efficiency:** Are all transformer layers equally important for prompting, or can we selectively choose optimal ones?
 
 ### Problem vs. Ideation: Proposed 3 Ideas to Solve the Problems
-1. **Optimized Architecture:** Redesign the model architecture to improve efficiency and balance image quality with faster inference.
-2. **Advanced Loss Functions:** Integrate novel loss functions (e.g., perceptual loss) to better capture artistic nuances and structural details.
-3. **Enhanced Data Augmentation:** Implement sophisticated data augmentation strategies to improve the model’s robustness and reduce overfitting.
+1. **Prompt Dropout:** Introduce dropout during training on prompt embeddings to reduce overfitting on base classes and improve robustness.
+2. **Smarter Prompt Initialization:** Replace random or repeated initialization with averaged CLIP text embeddings of class names to semantically ground the prompts.
+3. **Selective Prompt Injection:** Instead of prompting all layers, only inject prompts at layers 1, 6, and 11 — balancing representational depth and efficiency.
 
 ### Proposed Solution: Code-Based Implementation
 This repository provides an implementation of the enhanced stable diffusion model using PyTorch. The solution includes:
