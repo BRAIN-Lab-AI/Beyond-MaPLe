@@ -1,8 +1,5 @@
 # Beyond MaPLe: Enhancing Multimodal Prompt Learning for Vision-Language Tasks
 
-Below is a template for another sample project. Please follow this template.
-# [Deep Learning Project Template] Enhanced Stable Diffusion: A Deep Learning Approach for Artistic Image Generation
-
 ## Introduction
 
 Multimodal prompt learning has emerged as a powerful technique to enhance vision-language models, enabling improved generalization in zero-shot and few-shot learning tasks. In this project, we build upon the MaPLe framework (Multimodal Prompt Learning) by introducing three key enhancements:
