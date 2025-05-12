@@ -4,7 +4,16 @@ Below is a template for another sample project. Please follow this template.
 # [Deep Learning Project Template] Enhanced Stable Diffusion: A Deep Learning Approach for Artistic Image Generation
 
 ## Introduction
-Enhanced Stable Diffusion is a cutting-edge deep learning project that redefines artistic image generation by leveraging an advanced diffusion process to convert textual descriptions into high-quality images. By integrating a modified UNet architecture with innovative loss functions and enhanced data augmentation strategies, the model iteratively refines a latent noise vector conditioned on text embeddings to produce detailed and visually compelling artwork. This approach not only addresses common challenges such as slow inference times and output inconsistencies found in traditional diffusion models, but also pushes the boundaries of creative image synthesis, paving the way for novel applications in art, design, and multimedia content creation.
+
+Multimodal prompt learning has emerged as a powerful technique to enhance vision-language models, enabling improved generalization in zero-shot and few-shot learning tasks. In this project, we build upon the MaPLe framework (Multimodal Prompt Learning) by introducing three key enhancements:
+
+1. **Prompt Dropout** – to regularize shallow prompts and reduce overfitting.
+2. **Smarter Prompt Initialization** – using average CLIP text embeddings of class names for semantic anchoring.
+3. **Selective Prompt Injection** – limiting prompt tokens to key transformer layers (1, 6, and 11) for better efficiency.
+
+Our approach, dubbed **Beyond MaPLe**, is implemented and evaluated across 11 public datasets (excluding ImageNet and StanfordCars due to size constraints). Experiments demonstrate consistent improvement in novel class accuracy while preserving or slightly improving harmonic mean scores.
+
+This project was completed as part of the ICS590 Deep Learning course at KFUPM.
 
 ## Project Metadata
 ### Authors
