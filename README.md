@@ -127,7 +127,7 @@ Follow these steps to integrate and run the improved Beyond MaPLe version:
   This project builds upon the original MaPLe framework.  
   We thank the authors for releasing high-quality, reproducible code that made this work possible.
 - **Research Advisors:**  
-  We are grateful to the ICS590 course instructor and the faculty at King Fahd University of Petroleum and Minerals (KFUPM) for their ongoing support and guidance.
+  We are grateful to the ICS590 course instructor (Dr. Muzammil Behzad) for his ongoing support and guidance.
 - **Google Colab Pro:**  
   Experiments were conducted using Colab Pro with an NVIDIA T4 GPU, which provided a practical and accessible platform for training and evaluation.
 
