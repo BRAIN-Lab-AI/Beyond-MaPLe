@@ -74,7 +74,7 @@ The core solution includes:
 
 - **`maple.py`**: A self-contained file that implements the proposed enhancements to the MaPLe framework. This script modifies prompt dropout, initialization, and layer injection logic.
 
-The rest of the implementation relies on the [official MaPLe GitHub repository](https://github.com/muzairkhattak/maple), which provides the full backbone, dataset utilities, and training pipeline.
+The rest of the implementation relies on the [official MaPLe GitHub repository](https://github.com/muzairkhattak/multimodal-prompt-learning.git), which provides the full backbone, dataset utilities, and training pipeline.
 
 Refer to the following files in the original MaPLe repo for complete usage:
 - 📄 **`INSTALL.md`** – Setup instructions and dependencies.  
@@ -82,20 +82,24 @@ Refer to the following files in the original MaPLe repo for complete usage:
 - 📄 **`RUN.md`** – How to train and evaluate the model using provided configs.
 
 ## Model Workflow
-The workflow of the Enhanced Stable Diffusion model is designed to translate textual descriptions into high-quality artistic images through a multi-step diffusion process:
 
-1. **Input:**
-   - **Text Prompt:** The model takes a text prompt (e.g., "A surreal landscape with mountains and rivers") as the primary input.
-   - **Tokenization:** The text prompt is tokenized and processed through a text encoder (such as a CLIP model) to obtain meaningful embeddings.
-   - **Latent Noise:** A random latent noise vector is generated to initialize the diffusion process, which is then conditioned on the text embeddings.
+The Beyond MaPLe framework builds upon the original MaPLe architecture to improve base-to-novel generalization in vision-language models. The workflow can be broken down into three main phases:
 
-2. **Diffusion Process:**
-   - **Iterative Refinement:** The conditioned latent vector is fed into a modified UNet architecture. The model iteratively refines this vector by reversing a diffusion process, gradually reducing noise while preserving the text-conditioned features.
-   - **Intermediate States:** At each step, intermediate latent representations are produced that increasingly capture the structure and details dictated by the text prompt.
+1. **Input Encoding:**
+   - **Text Prompts:** Class names are used as textual prompts (e.g., `"a photo of a tiger"`). These are embedded using CLIP’s text encoder.
+   - **Image Input:** Images are passed through CLIP’s vision transformer for feature extraction.
+   - **Prompt Initialization:** Learnable prompt tokens are initialized using the average CLIP embedding of class names, offering semantic grounding from the start.
 
-3. **Output:**
-   - **Decoding:** The final refined latent representation is passed through a decoder (often part of a Variational Autoencoder setup) to generate the final image.
-   - **Generated Image:** The output is a synthesized image that visually represents the input text prompt, complete with artistic style and detail.
+2. **Prompt Integration and Injection:**
+   -  **Shallow Prompts:** Token sequences are prepended to both the image and text inputs before passing them into the transformer blocks.
+   - **Selective Layer Injection:** Instead of injecting prompts into all transformer layers, Beyond MaPLe selectively injects at layers 1, 6, and 11 for efficiency and deeper semantic influence.
+   - **Prompt Dropout:** During training, dropout is applied to prompt tokens to prevent overfitting on base classes and encourage generalization to novel classes.
+
+3. **Feature Alignment and Classification:**
+   - **Contrastive Learning:** CLIP’s contrastive loss is used to align visual and textual representations in a shared embedding space.
+   - **Zero-/Few-Shot Evaluation:** At inference time, the model classifies unseen images using only class name prompts — no additional training is needed for novel classes.
+   - **Prediction:** The similarity between image and text embeddings determines the predicted class in a zero-shot fashion.
+
 
 ## How to Run the Code
 
