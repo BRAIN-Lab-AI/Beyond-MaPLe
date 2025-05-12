@@ -17,19 +17,19 @@ This project was completed as part of the ICS590 Deep Learning course at KFUPM.
 
 ## Project Metadata
 ### Authors
-- **Team:** Mohammad Ahmad, Umar Abdullah and Malik Hussain
+- **Team:** Omar Alandijani -- 201934090
 - **Supervisor Name:** Dr. Muzammil Behzad
-- **Affiliations:** SABIC, ARAMCO and KFUPM
+- **Affiliations:** KFUPM
 
 ### Project Documents
-- **Presentation:** [Project Presentation](/presentation.pptx)
-- **Report:** [Project Report](/report.pdf)
+- **Report:** [Project Report](/BeyondMaPLe.pdf)
 
 ### Reference Paper
-- [High-Resolution Image Synthesis with Latent Diffusion Models](https://arxiv.org/abs/2112.10752)
+- [MaPLe: Multi-modal Prompt Learning](https://arxiv.org/pdf/2210.03117)
+- [Github Repository](https://github.com/muzairkhattak/multimodal-prompt-learning.git)
 
-### Reference Dataset
-- [LAION-5B Dataset](https://laion.ai/blog/laion-5b/)
+### Reference Datasets
+- [DATASETS](https://github.com/muzairkhattak/multimodal-prompt-learning/blob/main/docs/DATASETS.md)
 
 
 ## Project Technicalities
